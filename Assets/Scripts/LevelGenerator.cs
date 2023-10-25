@@ -24,7 +24,7 @@ public class LevelGenerator : MonoBehaviour
     };
     
     private readonly List<int> walls = new(){ 1, 2, 3, 4, 7};
-    private readonly Vector3 positionOffset = new Vector3(-14.5f, 15.5f);
+    private readonly Vector3 positionOffset = new Vector3(-13.5f, 14f);
     private void Start()
     {
         GenerateFullMap();
