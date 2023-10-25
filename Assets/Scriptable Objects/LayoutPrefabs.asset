@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83dfc8300cb24e548bd42ab53bfe246e, type: 3}
+  m_Name: LayoutPrefabs
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 4176893125546246020, guid: de0bcef91f128fb4392fbc82d94616a0, type: 3}
+  - {fileID: 4176893125546246020, guid: 366b9372cd5650c40a7c5acb47d3a912, type: 3}
+  - {fileID: 4176893125546246020, guid: c7bdf309a14c19d4484d9cd466f99422, type: 3}
+  - {fileID: 4176893125546246020, guid: 020d6ccd48c8dd444b3269175b5a660d, type: 3}
+  - {fileID: 4176893125546246020, guid: 51422b4a41d84e54ab3a7ace34b0d4cd, type: 3}
+  - {fileID: 4176893125546246020, guid: e8b121c4e657e4949aa7a74a9ce56fbb, type: 3}
+  - {fileID: 4176893125546246020, guid: 9a9abd73968aa4f42861905a51a87be0, type: 3}
+  - {fileID: 4176893125546246020, guid: 53ac217989531ff4e956ebe03a9aca99, type: 3}
