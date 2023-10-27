@@ -14,9 +14,13 @@ public class PacStudentController : MonoBehaviour
 {
     [SerializeField] private LevelGenerator level;
     //Sfx
+    [Space]
     [SerializeField] private AudioSource movingSfx;
-    //Animator
+    [SerializeField] private AudioClip pelletSfx;
+    //References
+    [Space]
     [SerializeField] private Animator animator;
+    [SerializeField] private ScoreController score;
     //Movement
     private int currentRow = 1;
     private int currentCol = 1;
@@ -24,6 +28,10 @@ public class PacStudentController : MonoBehaviour
     //Input
     private InputDirection lastInput = InputDirection.None;
     private InputDirection currentInput = InputDirection.None;
+    //state
+    private bool powerUpped = false;
+    private Coroutine powerPillRoutine;
+    
     private void Update()
     {
         GetInput();
@@ -36,6 +44,7 @@ public class PacStudentController : MonoBehaviour
     private void UpdateAnimatorState()
     {
         animator.SetBool("Moving", moving);
+        animator.SetLayerWeight( 1, powerUpped ? 1 : 0);
         if(lastInput == InputDirection.Left)
             animator.SetBool("FacingRight", false);
         else if(lastInput == InputDirection.Right)
@@ -121,4 +130,66 @@ public class PacStudentController : MonoBehaviour
             lastInput = InputDirection.Right;
     }
     
+    //Collisions
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Pellet"))
+        {
+            Destroy(other.gameObject);
+            score.AddScore(10);
+            animator.SetTrigger("Bite");
+            AudioSource.PlayClipAtPoint(pelletSfx,Vector3.zero);
+        }
+        else if(other.CompareTag("Cherry"))
+        {
+            Destroy(other.gameObject);
+            score.AddScore(100);
+        }
+        else if(other.CompareTag("PowerPill"))
+        {
+            Destroy(other.gameObject);
+            if(powerPillRoutine!=null)
+                StopCoroutine(powerPillRoutine);
+            powerPillRoutine = StartCoroutine(PowerPillRoutine());
+        }
+        else if (other.CompareTag("Ghost"))
+        {
+            if (powerUpped)
+            {
+                var ghost = other.GetComponent<Ghost>();
+                if (!ghost.Scared()) return;
+                ghost.DeathAndRespawn();
+                score.AddScore(300);
+            }
+            else
+            {
+                DeathAndRespawn();
+            }
+        }
+    }
+
+    private void DeathAndRespawn()
+    {
+    }
+
+    private IEnumerator PowerPillRoutine()
+    {
+        powerUpped = true;
+        yield return new WaitForSeconds(10);
+        powerUpped = false;
+    }
+
+}
+
+public class Ghost
+{
+    public bool Scared()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void DeathAndRespawn()
+    {
+        throw new NotImplementedException();
+    }
 }

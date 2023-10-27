@@ -69,6 +69,8 @@ public class CherryMovement : MonoBehaviour
         float t = 0;
         while (t<duration)
         {
+            if(cherry == null)
+                break;
             cherry.transform.position = Vector3.Lerp(startPosition,endPosition,t/duration);
             t += Time.deltaTime;
             yield return null;

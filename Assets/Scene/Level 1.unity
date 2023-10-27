@@ -398,17 +398,13 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 1085747346}
+    - target: {fileID: 1796761451455498553, guid: aa8145f0324d44e44b79631e94e83024, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 2093067560}
     - target: {fileID: 2853051851157614124, guid: aa8145f0324d44e44b79631e94e83024, type: 3}
       propertyPath: m_Name
       value: PacStudent
-      objectReference: {fileID: 0}
-    - target: {fileID: 6022055499613963138, guid: aa8145f0324d44e44b79631e94e83024, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6022055499613963138, guid: aa8145f0324d44e44b79631e94e83024, type: 3}
-      propertyPath: m_FlipY
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6022055499613963138, guid: aa8145f0324d44e44b79631e94e83024, type: 3}
       propertyPath: m_Sprite
@@ -2281,6 +2277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1973567767}
+  - component: {fileID: 1973567768}
   m_Layer: 5
   m_Name: Time
   m_TagString: Untagged
@@ -2310,6 +2307,19 @@ RectTransform:
   m_AnchoredPosition: {x: -295, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &1973567768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973567766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b30b0e669a655d4e9176bbdaa08258a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMesh: {fileID: 1864918036}
 --- !u!1 &2092979158
 GameObject:
   m_ObjectHideFlags: 0
@@ -2364,6 +2374,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2093067559}
+  - component: {fileID: 2093067560}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -2393,3 +2404,16 @@ RectTransform:
   m_AnchoredPosition: {x: 332, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &2093067560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093067558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce55bd06b5855c41a906c1a8961c7f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMesh: {fileID: 1750628292}
