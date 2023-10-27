@@ -126,15 +126,15 @@ public class LevelGenerator : MonoBehaviour
         return 0;
     }
 
-    private bool IsPath(int row, int col)
+    public bool IsPath(int row, int col)
     {
         return !IsOut(row, col) && !(walls.Contains(levelMap[row, col]));
     }
-    private bool IsWall(int row, int col)
+    public bool IsWall(int row, int col)
     {
         return !IsOut(row, col) && walls.Contains(levelMap[row, col]);
     }
-    private bool IsOut(int row, int col)
+    public bool IsOut(int row, int col)
     {
         return row < 0 || col < 0 || row >= levelMap.GetLength(0) || col >= levelMap.GetLength(1);
     }
