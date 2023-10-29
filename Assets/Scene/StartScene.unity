@@ -320,6 +320,18 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 529311607}
     m_Modifications:
+    - target: {fileID: 2152373027564092033, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3045578704859944734, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874630182508414134, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4013362700201161354, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -869,10 +881,22 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 529311607}
     m_Modifications:
+    - target: {fileID: 2152373027564092033, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3012304905680950341, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: f20feae26601b41cebb1fac82804f469, type: 3}
+    - target: {fileID: 3045578704859944734, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874630182508414134, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4013362700201161354, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -921,6 +945,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton-Red
       objectReference: {fileID: 0}
+    - target: {fileID: 5080994600522140336, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f20feae26601b41cebb1fac82804f469, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
@@ -3011,10 +3039,22 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 529311607}
     m_Modifications:
+    - target: {fileID: 2152373027564092033, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3012304905680950341, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 094ba08594ea9410084b33359f864dd3, type: 3}
+    - target: {fileID: 3045578704859944734, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874630182508414134, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4013362700201161354, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -3063,6 +3103,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton-Green
       objectReference: {fileID: 0}
+    - target: {fileID: 5080994600522140336, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 094ba08594ea9410084b33359f864dd3, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
@@ -3449,10 +3493,22 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 529311607}
     m_Modifications:
+    - target: {fileID: 2152373027564092033, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3012304905680950341, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 9ae15dd6a7a4d455688b82906b7e8df3, type: 3}
+    - target: {fileID: 3045578704859944734, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874630182508414134, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4013362700201161354, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -3501,6 +3557,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton-Purple
       objectReference: {fileID: 0}
+    - target: {fileID: 5080994600522140336, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9ae15dd6a7a4d455688b82906b7e8df3, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d0ac9f230b3c484d8278028643b8635, type: 3}
