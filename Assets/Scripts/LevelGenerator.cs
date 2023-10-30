@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,9 +26,13 @@ public class LevelGenerator : MonoBehaviour
     
     private readonly List<int> walls = new(){ 1, 2, 3, 4, 7};
     private readonly Vector3 positionOffset = new Vector3(-13.5f, 14f);
-    private void Start()
+    private void Awake()
     {
         GenerateFullMap();
+    }
+
+    private void Start()
+    {
         GenerateMapTiles();
     }
 
@@ -126,6 +131,21 @@ public class LevelGenerator : MonoBehaviour
         return 0;
     }
 
+    public int GetPelletCount()
+    {
+        int pelletCount = 0;
+        for (var row = 0; row < levelMap.GetLength(0); row++)
+        {
+            for (var col = 0; col < levelMap.GetLength(1); col++)
+            {
+                var id = levelMap[row, col];
+                if (id == 5)
+                    pelletCount +=1;
+            }
+        }
+        return pelletCount;
+    }
+    
     public bool IsPath(int row, int col)
     {
         return !IsOut(row, col) && !(walls.Contains(levelMap[row, col]));
