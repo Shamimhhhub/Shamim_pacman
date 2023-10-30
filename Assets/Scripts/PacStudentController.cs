@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 public class PacStudentController : MonoBehaviour
 {
     [SerializeField] private GameObject deathParticlePrefab;
+    [SerializeField] private GameObject wallParticlePrefab;
     [SerializeField] private LevelGenerator level;
     //Sfx
     [Space]
     [SerializeField] private AudioSource movingSfx;
     [SerializeField] private AudioClip pelletSfx;
+    [SerializeField] private AudioClip wallSfx;
     [Space]
     //Music
     [SerializeField] private AudioSource music;
@@ -34,6 +36,8 @@ public class PacStudentController : MonoBehaviour
     private InputDirection lastInput = InputDirection.None;
     private InputDirection currentInput = InputDirection.None;
     //state
+    private bool wallBump;
+    private bool teleport;
     private bool gameover;
     private int life = 3;
     private bool powerUpped;
@@ -80,6 +84,8 @@ public class PacStudentController : MonoBehaviour
 
     private void MoveInGrid()
     {
+        if (lastInput == InputDirection.None) return;
+
         var row = currentRow;
         var col = currentCol;
         switch (lastInput)
@@ -97,13 +103,11 @@ public class PacStudentController : MonoBehaviour
                 col++;
                 break;
         }
-        if (level.IsPath(row, col) && lastInput != InputDirection.None)
-        {
-            currentRow = row;
-            currentCol = col;
-            currentInput = lastInput;
-            StartCoroutine(MoveWithCurrentInput());
-        }
+
+        currentRow = row;
+        currentCol = col;
+        currentInput = lastInput;
+        StartCoroutine(MoveWithCurrentInput());
     }
 
     private IEnumerator MoveWithCurrentInput()
@@ -112,15 +116,54 @@ public class PacStudentController : MonoBehaviour
         var endPos = GetEndPos();
         moving = true;
         float t = 0;
-        while (t < .2f)
+        while (t < .2f && !wallBump)
         {
             transform.position = Vector3.Lerp(startPos, endPos, t/.2f);
             t += Time.deltaTime;
             yield return null;
         }
+
+        if (wallBump)
+        {
+            lastInput = InputDirection.None;
+            endPos = startPos;
+            switch (currentInput)
+            {
+                case InputDirection.Up:
+                    currentRow++;
+                    break;
+                case InputDirection.Left:
+                    currentCol++;
+                    break;
+                case InputDirection.Down:
+                    currentRow--;
+                    break;
+                case InputDirection.Right:
+                    currentCol--;
+                    break;
+            }
+        }
+   
         transform.position = endPos;
+        if (teleport)
+        {
+            switch (currentInput)
+            {
+                case InputDirection.Right:
+                    transform.position += Vector3.left * 28;
+                    currentCol -= 28;
+                    break;
+                case InputDirection.Left:
+                    transform.position += Vector3.right * 28;
+                    currentCol += 28;
+                    break;
+            }
+        }
         moving = false;
-        MoveInGrid();
+        if(!wallBump)
+            MoveInGrid();
+        teleport = false;
+        wallBump = false;
     }
 
     private Vector3 GetEndPos()
@@ -154,7 +197,18 @@ public class PacStudentController : MonoBehaviour
     //Collisions
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Pellet"))
+        if (other.CompareTag("Wall"))
+        {
+            wallBump = true;
+            var pos = (other.transform.position + transform.position) / 2;
+            Instantiate(wallParticlePrefab, pos, Quaternion.identity);
+            AudioSource.PlayClipAtPoint(wallSfx, Vector3.zero);
+        }
+        else if (other.CompareTag("Teleport"))
+        {
+            teleport = true;
+        }
+        else if (other.CompareTag("Pellet"))
         {
             pelletsCount--;
             Destroy(other.gameObject);
